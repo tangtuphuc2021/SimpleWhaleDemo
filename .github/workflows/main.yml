@@ -3,6 +3,8 @@ name: Build and Run
 on:
   push:
     branches: [ master ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
@@ -17,4 +19,6 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
       - name: build Docker application
-        run: docker build -t tangtuphuc/whale-example .
+        run: docker build -t bengotch/whale-example .
+      - name: run docker
+        run: docker run -d -p 80:80 bengotch/whale-example
