@@ -18,5 +18,3 @@ jobs:
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
       - name: build Docker application
         run: docker build -t tangtuphuc/whale-example .
-      - name: run Docker application
-        run: docker run -p80:80 tangtuphuc/whale-example
