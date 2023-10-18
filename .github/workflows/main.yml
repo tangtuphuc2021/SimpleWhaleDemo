@@ -16,10 +16,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-
-      - name: Pull Docker image
-        run: docker pull nodejsapp
-
       - name: build Docker application
         run: docker build -t tangtuphuc/whale-example .
       - name: run Docker application
